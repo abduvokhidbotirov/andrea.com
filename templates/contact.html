@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div id="colorlib-main">
+        <section class="ftco-section contact-section px-md-4">
+            <div class="container">
+                <div class="row d-flex mb-5 contact-info">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="h3">Contact Information</h2>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-lg-6 col-xl-3 d-flex mb-4">
+                        <div class="info bg-light p-4">
+                            <p><span style="color: #20c997">Phone:</span><a href="tel:+44 123 45 67 89"> <br>+44 123 45 67 89</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3 d-flex mb-4">
+                        <div class="info bg-light p-4">
+                            <p><span style="color: #ffc107">Email:</span> <br> <a href = "mailto: example@gmail.com">example@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3 d-flex mb-4">
+                        <div class="info bg-light p-4">
+                            <p><span style="color: #005cbf">Website</span> <br><a href="https://andrea.com/">www.andrea.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row block-9">
+                    <div class="col-lg-6 d-flex">
+                        <form method="post" class="bg-light p-5 contact-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ form.name }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.subject }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.message }}
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div id="colorlib-main" class="bg-dark"><div class="img d-flex align-self-stretch align-items-center js-fullheight"
+                             style="background-image:url({% static 'images/about.jpg' %});"></div>
+                    </div>
+                </div>
+            </div>
+            </div></section>
+    </div>
+
+{% endblock %}
